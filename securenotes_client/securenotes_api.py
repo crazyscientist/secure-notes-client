@@ -180,12 +180,13 @@ class NotesAPIClient(object):
         """
         Upload private/public key.
 
-        .. note:: If replacing the upstream keys, ensure that encrypted data is re-crypted!
+        .. note:: If replacing the upstream keys, ensure that encrypted data is
+                  re-crypted!
 
-        .. hint::
-            The generated RSA private and public keys are ready for use e.g. with the OpenSSL command line tool.
+        .. hint:: The generated RSA private and public keys are ready for use
+                  e.g. with the OpenSSL command line tool.
 
-        :return: :py:obj:`Crypto.PublicKey.RSA._RSAobj` or ``None`
+        :return: :py:obj:`Crypto.PublicKey.RSA._RSAobj` or ``None``
         """
         url = urllib.parse.urljoin(self.base_url, "key/{}/".format(self.username))
         self.logger.debug("URL: {}".format(url))

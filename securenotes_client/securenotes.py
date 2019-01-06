@@ -380,7 +380,8 @@ if __name__ == '__main__':
     if configfile.exists():
         config.read(configfile)
 
-    namespace = vars(get_argument_parser(config).parse_args())
+    parser = get_argument_parser(config)
+    namespace = vars(parser.parse_args())
 
     if not namespace.get("debug"):
         logging.disable(logging.CRITICAL)
@@ -397,3 +398,5 @@ if __name__ == '__main__':
     if CommandClass is not None and issubclass(CommandClass, BaseCommand):
         c = CommandClass(namespace)
         sys.exit(c())
+    else:
+        parser.print_help()
