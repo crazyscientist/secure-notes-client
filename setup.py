@@ -7,7 +7,7 @@ with open("README.md") as fh:
 
 setup(
     name='securenotes-client',
-    version='0.2.0',
+    version='0.2.1',
     author="Andreas Hasenkopf",
     author_email="andreas@hasenkopf.xyz",
     description="Command line client for SecureNotes",
