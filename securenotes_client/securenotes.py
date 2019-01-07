@@ -9,7 +9,7 @@ import sys
 
 import mdv
 
-import securenotes_api
+from securenotes_client import securenotes_api
 
 
 class BaseCommand(object):
